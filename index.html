@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Contrail+One&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/img/logo.jpg">
+    <script src="https://kit.fontawesome.com/3df637a2f2.js" crossorigin="anonymous"></script>
+    <title>Tune Burguer</title>
+</head>
+<body>
+    <header>
+            <div class="content">
+                <div class="logo">
+                    <img src="./img/logo.jpg" alt="Cupcake">
+                </div>
+                <ul class="list-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#cardapio">Cardápio</a></li>
+                    <li><a href="#sobrenos">Sobre nós</a></li>
+                    <li><a href="#contatos">Contatos</a></li>
+                    <li><a href="#pedidos"><i class="fas fa-shopping-cart"></i></a></li>
+
+                </ul>
+
+                <div class="menu-toggle">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                </div>
+
+            </div>
+        
+    </header>
+
+    <section class="first-section" id="home">
+        
+        <div class="conteudo-principal">
+            <h1>Hambúrguers tematizados!!</h1>
+            <h2>Os melhores Hambúrguers da região</h2>
+            <div class="btn">
+                <button class="reservar">
+                        <a href="#cardapio" style="text-decoration: none; color: inherit;">
+                            cardápio
+                        </a>
+                </button>
+            </div>
+        </div>    
+    </section>    
+
+    <section id="cardapio" 
+        class="cardapio">    
+        <h2>Cardápio</h2>
+            <div class="itens-cardapio">
+                <div class="info" data-name="Toyota" data-price="22,00">
+                    <img src="./img/burguer.jpg" alt="cheeseburguer">
+                        <h3>Toyota</h3>
+                            <h1>Pão de Brioche, Hambúrguer 200g, Cheddar e Mostarda</h1>
+                        <h3>R$22,00</h3>
+                        <button class="pedir" onclick="adicionarItem(this)">pedir agora</button>
+                </div>
+                <div class="info" data-name="Porsche" data-price="30,00">
+                    <img src="./img/bacon.jpg" alt="Puro Sangue">
+                        <h3>Porsche</h3>
+                            <h1>Pão de Brioche, Bacon Crocante, Doritos, Hambúrguer 150g, Alface e Cheddar</h1>
+                        <h3>R$30,00</h3>
+                        <button class="pedir" onclick="adicionarItem(this)">pedir agora</button>
+                </div>
+                <div class="info"  data-name="RAM" data-price="40,00">
+                    <img src="./img/xtudo.jpg" alt="X-tudo">
+                        <h3>RAM</h3>
+                            <h1>Pão de Brioche, Bacon Crocante, 2 Hambúrguer 150g, <br> Cheddar, Pimenta Malagueta, Picles e Cebola</h1>
+                        <h3>R$40,00</h3>
+                        <button class="pedir" onclick="adicionarItem(this)">pedir agora</button>
+                </div>
+                <div class="info" data-name="Tesla" data-price="30,00">
+                    <img src="./img/vegano.jpg" alt="Vegano">
+                        <h3>Tesla</h3>
+                            <h1>Pão de Brioche, Alface, Tomate, Hambúrguer de Soja,<br> Creme de Brócolis, Pimenta, Quiejo Canastra e Rúcula</h1>
+                        <h3>R$30,00</h3>
+                        <button class="pedir" onclick="adicionarItem(this)">pedir agora</button>
+                </div>
+                <div class="info" data-name="Subaru" data-price="28,00">
+                    <img src="./img/xsalada.jpg" alt="X-Salada">
+                        <h3>Subaru</h3>
+                            <h1>Pão de Brioche, Alface, Tomate, Hambúrguer 200g, <br> Cheddar, Cebola Roxa e Maionese</h1>
+                        <h3>R$30,00</h3>
+                        <button class="pedir" onclick="adicionarItem(this)">pedir agora</button>
+                </div>
+                <div class="info" data-name="Lamborghini" data-price="35,00">
+                    <img src="./img/casa.jpg" alt="X-Casa">
+                        <h3>Lamborghini</h3>
+                            <h1>Pão de Brioche, Alface, Tomate, Pepino, <br> 2 Hambúrguer 150g, Cebola e Molho Especial</h1>
+                        <h3>R$35,00</h3>
+                        <button class="pedir" onclick="adicionarItem(this)">pedir agora</button>
+                </div>
+            </div>
+    </section>
+
+    <section id="pedidos"  
+        class ="carrinhoC">
+        <div class="container ">
+            <h2> <br> Seus Pedidos</h2>
+            <ul id="pedido-lista">
+                <!-- Lista de pedidos -->
+            </ul>
+        </div>
+        <div id="carrinho"></div>
+        <div id="total">
+            Total: R$0.00 <br>
+        </div>
+        <div class="btn centralizar">
+        <button onclick="mostrarEndereco()">Finalizar Pedido</button></div>
+        <div id="abrir">
+                <h2>Endereço de Entrega</h2>
+                <label for="name">Nome:</label>
+                <input class="text-input" type="text" id="name">
+                <label for="address"><br>Rua e Número:</label>
+                <input class="text-input" type="text" id="address">
+                <label for="address"><br>Telefone:</label>
+                <input class="text-input" type="text" id="number">
+                <div class="btn centralizar">
+                <button onclick="confirmarPedido()" id="demo">Confirmar Pedido</button></div>
+    </section>
+
+    <section class="sobre-nos" id="sobrenos"> 
+        <div class="main">
+            <div class="contentsobre">
+                <h2>Sobre nós</h2>
+               <p>A Tune Burguer é uma hamburgueria temática de carros, 
+                oferecendo uma experiência gastronômica única em um ambiente vibrante e dinâmico. 
+                Com atendimento de excelência e hambúrgueres deliciosos, é o destino ideal para os apaixonados por comida e automobilismo.
+                Estamos localizados em Maringá-PR na Av. Advogado Horácio Raccanello Filho, 5410 - Zona 7.</p>
+            </div>     
+            <div class="img-recepção">
+                <img src="./img/recepcao.png" alt="">
+            </div>
+        </div>    
+    </section>
+
+    <section class="contatos" id="contatos">
+        <h3>Contatos</h3>
+        <div class="contatos-secao">
+            <div>
+                <i class="fas fa-phone"></i>
+                <span>(44) 92163-4736</span>
+            </div>
+            <div>
+                <i class="fab fa-instagram"></i>
+                <span>@tune_burguer</span>
+            </div>
+            <div>
+                <i class="fab fa-facebook-f"></i>
+                <span>TuneBurguer</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h4>Desenvolvido por:      Lucas Schuler Foppa,     Cauã Yoshimura Oliveira   e   Iury Corso Célio  
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
